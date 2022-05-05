@@ -1,0 +1,10 @@
+
+@media (min-width: 811px){
+    .Checkout::before {
+    content: '';
+    background: var(--breadcrumbs-background);
+    min-height: var(--breadcrumbs-height);
+    display: none;
+    }
+}
+

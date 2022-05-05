@@ -1,0 +1,121 @@
+@media (min-width: 811px){
+    // Progress Bar
+    .ProgressBarContainer {
+        background: var(--breadcrumbs-background);
+        width: 100%;
+        padding: 30px 0 45px;
+        border-radius: 10px;
+        display: block;
+    }
+    
+    .ProgressBarList {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        content: "";
+        
+        .ProgressBarEnd{
+            height: 5px;
+            background-color: var(--secondary-dark-color);
+            margin-top: 12px;
+            width: 100%;
+            background: linear-gradient(to left, var(--secondary-dark-color) 50%, var(--primary-base-color) 50%) right;
+            background-size: 201%;
+            opacity: 0.2;
+        }
+        .ProgressBarEnd.inner{
+            width: 50%;
+        }
+        .ProgressBarEnd.done{
+            opacity: 1;
+            transition: .5s ease-out;
+            background-position: left;
+        }
+
+        
+
+        li{
+            &:before{
+                content: "";
+            }
+        }
+    }
+    
+    .ProgressBarItem {
+        position: relative;
+        display: block;
+        
+        text-align: center;
+        line-height: 3em;
+        content: "";
+        padding: 0;
+
+        .ProgressBarIndexContainer{
+            width: 100%;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            .ProgressBarIndexCircle{
+                margin: auto;
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                vertical-align: middle;
+                border-radius: 50%;
+
+                p{
+                    line-height: 35px;
+                }
+            }
+                
+        }
+
+        h4{
+            left: -175px;
+            position: absolute;
+            width: 400px;
+            line-height: 42px;
+        }
+    }
+     
+    .ProgressBarItem.done {
+
+        p{
+            color: var(--secondary-base-color);
+        }
+        .ProgressBarIndexCircle{
+            background-color: var(--primary-base-color);
+            opacity: 1;
+        }
+    }
+
+    .ProgressBarItem.todo {
+        
+        .ProgressBarIndexCircle{
+            opacity: 0.2;
+            background-color: var(--secondary-dark-color);
+        }
+
+        h4{
+            opacity: 0.2;
+        }
+    }
+
+    .ProgressbarCheckbox{
+        top: 13px;
+        left: 12px;
+        position: absolute;
+        width: 12px;
+        height: 6px;
+        transform: rotate(135deg);
+        border-right: 2px solid var(--checkout-address-table-check-mark-selected-color);
+        border-top: 2px solid var(--checkout-address-table-check-mark-selected-color);
+    }
+}
+
+
+@keyframes progress {
+    from {background-color: var(--secondary-dark-color);}
+    to {background-color: var(--primary-base-color);}
+}
